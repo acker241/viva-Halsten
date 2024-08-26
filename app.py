@@ -26,7 +26,7 @@ with cols[0]:
 
 # Capturando a página atual pela query string
 
-page = st.query_params.get_all("page")[0]
+page = st.query_params.get_all("page")
 
 # Funções das páginas específicas
 def refuge_campo_page():
