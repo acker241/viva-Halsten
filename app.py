@@ -9,7 +9,7 @@ st.header("Explore Nossos Serviços")
 ic1, ic2, ic3 = st.columns([0.2, 0.4, 0.4])
 
 with ic1:
-    st.image('https://github.com/acker241/viva-Halsten/blob/main/pages/perfilTransp.png', width=120)
+    st.image('https://raw.githubusercontent.com/acker241/viva-Halsten/main/pages/perfilTransp.png', width=120)
 with ic2:
     st.write('')
     st.write('')
