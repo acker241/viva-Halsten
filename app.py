@@ -1,7 +1,7 @@
 import streamlit as st
 
 # Configurando o layout da página principal
-st.title("Clube de Benefícios - Halsten")
+st.image('https://raw.githubusercontent.com/acker241/viva-Halsten/main/topo.png')
 
 # Criando o grid 4x4 para navegação
 st.header("Explore Nossos Serviços")
@@ -48,6 +48,10 @@ def refuge_campo_page():
     st.header("Refuge Campo")
     st.subheader("Estadias no Campo")
     st.write("Explore opções de estadias curtas no campo com diversas atividades ao ar livre.")
+    st.image('https://raw.githubusercontent.com/acker241/viva-Halsten/main/chales/10.png')
+    st.image('https://raw.githubusercontent.com/acker241/viva-Halsten/main/chales/11.png')
+    st.image('https://raw.githubusercontent.com/acker241/viva-Halsten/main/chales/12.png')
+    st.image('https://raw.githubusercontent.com/acker241/viva-Halsten/main/chales/13.png')
     # Aqui você pode adicionar mais funcionalidades, como listagem de opções, reserva, etc.
 
 def refuge_litoral_page():
