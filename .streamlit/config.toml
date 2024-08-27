@@ -1,2 +1,4 @@
 [theme]
 backgroundColor="#000000"
+primaryColor = "#a0978d"
+textColor = "#FFFFFF"
