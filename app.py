@@ -1,10 +1,21 @@
 import streamlit as st
 
 # Configurando o layout da página principal
-st.title("Clube de Benefícios - Incorporadora XYZ")
+st.title("Clube de Benefícios - Halsten")
 
 # Criando o grid 4x4 para navegação
 st.header("Explore Nossos Serviços")
+
+ic1, ic2, ic3 = st.columns([0.2, 0.4, 0.4])
+
+with ic1:
+    st.image('pages\\perfilTransp.png', width=120)
+with ic2:
+    st.write('')
+    st.write('')
+    st.write('')    
+    st.write('Como está hoje Fulano de Tal?')
+
 cols = st.columns(4)
 
 # Definindo as opções clicáveis
@@ -26,8 +37,11 @@ with cols[0]:
 
 # Capturando a página atual pela query string
 
-page = st.query_params.get_all("page")[0]
-st.write(page)
+if st.query_params.get_all("page") == []:
+    page = ''
+else:
+    page = st.query_params.get_all("page")[0]
+
 
 # Funções das páginas específicas
 def refuge_campo_page():
@@ -83,7 +97,7 @@ def vivencia_halsten_page():
         with cols[i]:
             if st.button(empreendimento):
                 st.query_params['page'] =f"vivencia_{empreendimento.lower().replace(' ', '_')}"
-                st.experimental_rerun()
+                st.rerun()
 
 def vivencia_detalhes_page(empreendimento):
     st.header(f"Vivência {empreendimento}")
@@ -116,4 +130,4 @@ else:
 
 # Rodapé
 st.markdown("---")
-st.markdown("© 2024 - Clube de Benefícios da Incorporadora XYZ")
+st.markdown("© 2024 - Halsten Incorporadora")
