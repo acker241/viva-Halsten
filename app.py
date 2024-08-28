@@ -26,14 +26,13 @@ with cols[1]:
     if st.button("Refuge Litoral"):
         st.query_params['page'] =  "refuge_litoral"
 with cols[2]:
-    if st.button("Meus Halsten"):
-        st.query_params['page'] = "meus_halsten"
+    if st.button("Vivência Halsten"):
+        st.query_params['page'] = "vivencia_halsten"
 with cols[3]:
     if st.button("Halsten Energia"):
         st.query_params['page'] = "halsten_energia"
-with cols[0]:
-    if st.button("Vivência Halsten"):
-        st.query_params['page'] = "vivencia_halsten"
+
+
 
 # Capturando a página atual pela query string
 
@@ -48,10 +47,13 @@ def refuge_campo_page():
     st.header("Refuge Campo")
     st.subheader("Estadias no Campo")
     st.write("Explore opções de estadias curtas no campo com diversas atividades ao ar livre.")
-    st.image('https://raw.githubusercontent.com/acker241/viva-Halsten/main/chales/10.png')
-    st.image('https://raw.githubusercontent.com/acker241/viva-Halsten/main/chales/11.png')
-    st.image('https://raw.githubusercontent.com/acker241/viva-Halsten/main/chales/12.png')
-    st.image('https://raw.githubusercontent.com/acker241/viva-Halsten/main/chales/13.png')
+    col1, col2 = st.columns(2)
+    with col1:
+        st.image('https://raw.githubusercontent.com/acker241/viva-Halsten/main/chales/10.png')
+        st.image('https://raw.githubusercontent.com/acker241/viva-Halsten/main/chales/11.png')
+    with col2:
+        st.image('https://raw.githubusercontent.com/acker241/viva-Halsten/main/chales/12.png')
+        st.image('https://raw.githubusercontent.com/acker241/viva-Halsten/main/chales/13.png')
     # Aqui você pode adicionar mais funcionalidades, como listagem de opções, reserva, etc.
 
 def refuge_litoral_page():
@@ -59,21 +61,6 @@ def refuge_litoral_page():
     st.subheader("Estadias no Litoral")
     st.write("Aproveite estadias curtas no litoral com acesso a praias, esportes aquáticos e muito mais.")
     # Aqui você pode adicionar funcionalidades semelhantes às da página Refuge Campo.
-
-def meus_halsten_page():
-    st.header("Meus Halsten")
-    st.subheader("Empreendimentos Comprados")
-    st.write("Aqui estão os empreendimentos que você adquiriu:")
-    # Simulação de dados
-    empreendimentos = [
-        {"nome": "Halsten Prime", "planta": "Acesso à Planta", "fornecedores": ["Arquitetura X", "Marcenaria Y"]},
-        {"nome": "Halsten Garden", "planta": "Acesso à Planta", "fornecedores": ["Decoração Z", "Marcenaria W"]}
-    ]
-    for empreendimento in empreendimentos:
-        st.write(f"**{empreendimento['nome']}**")
-        st.write(f"[{empreendimento['planta']}]()")
-        st.write("Fornecedores sugeridos: " + ", ".join(empreendimento["fornecedores"]))
-        st.markdown("---")
 
 def halsten_energia_page():
     st.header("Halsten Energia")
@@ -120,8 +107,6 @@ if page == "refuge_campo":
     refuge_campo_page()
 elif page == "refuge_litoral":
     refuge_litoral_page()
-elif page == "meus_halsten":
-    meus_halsten_page()
 elif page == "halsten_energia":
     halsten_energia_page()
 elif page == "vivencia_halsten":
